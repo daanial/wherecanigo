@@ -3,6 +3,9 @@ interface ProjectSidebarProps {
   onClose?: () => void
 }
 
+const linkClass =
+  'text-ink underline decoration-border underline-offset-2 hover:text-accent hover:decoration-accent'
+
 export function ProjectSidebar({ className = '', onClose }: ProjectSidebarProps) {
   return (
     <aside
@@ -22,30 +25,76 @@ export function ProjectSidebar({ className = '', onClose }: ProjectSidebarProps)
         </button>
       )}
       <div className="flex-1 overflow-y-auto px-6 py-8">
-        <h2 className="font-serif text-xl text-ink">About this map</h2>
+        <h2 className="font-serif text-xl text-ink">About Where Can I Go?</h2>
 
         <p className="mt-4 font-sans text-sm leading-relaxed text-ink-soft">
-          Where Can I Go? is a budget-first flight discovery toy — not a search
-          engine. Pick a home airport, set a return budget, and choose a month.
-          The world lights up with everywhere you can afford to go.
+          Where Can I Go? is a free budget flight map for travellers who want
+          inspiration before they search. Choose a departure airport — Amsterdam,
+          London, Dubai, and other major hubs — set a return budget in euros, and
+          pick a month. The map shows cheap flights and affordable destinations
+          you can reach from that city.
         </p>
 
         <p className="mt-4 font-sans text-sm leading-relaxed text-ink-soft">
-          Cheaper destinations appear larger and warmer. Drag the budget slider
-          and watch places fade in and out — the receding of the unaffordable is
-          the whole point.
+          This is a discovery tool, not a booking engine or a traditional flight
+          search. Cheaper routes appear larger and warmer on the map; destinations
+          above your budget fade away as you move the slider. It is built for
+          weekend breaks, city trips, and “where can I afford to fly?” planning.
         </p>
 
         <p className="mt-4 font-sans text-sm leading-relaxed text-ink-soft">
-          Prices are refreshed daily from real fare data. Click a dot to open a
-          return search in euros. No accounts, no booking flow — just inspiration.
+          Fares are updated daily from real price data (one-way and return where
+          available). Click any destination to open a return flight search in
+          euros. No sign-up, no app — just a map and a budget.
         </p>
+
+        <h3 className="mt-6 font-serif text-base text-ink">How to use it</h3>
+        <ul className="mt-2 list-inside list-disc space-y-1.5 font-sans text-sm leading-relaxed text-ink-soft">
+          <li>Select your home airport from the dropdown</li>
+          <li>Set your return budget with the slider</li>
+          <li>Choose a travel month</li>
+          <li>Explore dots on the map and click for live prices</li>
+        </ul>
 
         <hr className="my-6 border-border" />
 
-        <p className="font-sans text-xs leading-relaxed text-ink-soft/80">
-          Built as a static site: no backend, no API keys in the browser. Data
-          lives in a JSON file updated by a scheduled job.
+        <h3 className="font-serif text-base text-ink">About the project</h3>
+        <p className="mt-3 font-sans text-sm leading-relaxed text-ink-soft">
+          Where Can I Go? is a side project by{' '}
+          <a
+            href="https://cubexic.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+          >
+            Danial Keshani
+          </a>{' '}
+          and{' '}
+          <a
+            href="https://cubexic.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+          >
+            Cubex
+          </a>
+          . More experiments in travel, maps, and simple tools live at{' '}
+          <a
+            href="https://cubexic.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+          >
+            cubexic.com
+          </a>
+          .
+        </p>
+
+        <p className="mt-4 font-sans text-xs leading-relaxed text-ink-soft/80">
+          The site runs as a static web app: no server at request time. Flight
+          prices are stored in a JSON file refreshed by an automated job. Map
+          tiles by Mapbox; fare data via Travelpayouts / Aviasales affiliate
+          links.
         </p>
       </div>
     </aside>
