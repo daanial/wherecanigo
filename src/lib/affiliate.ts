@@ -33,10 +33,8 @@ export function buildAffiliateUrl(
   const params = new URLSearchParams({
     cy: 'eur',
     locale: 'en',
+    marker: TRAVELPAYOUTS_MARKER,
   })
-  if (TRAVELPAYOUTS_MARKER !== 'YOUR_MARKER_HERE') {
-    params.set('marker', TRAVELPAYOUTS_MARKER)
-  }
 
   return `https://www.aviasales.com${path}?${params.toString()}`
 }
