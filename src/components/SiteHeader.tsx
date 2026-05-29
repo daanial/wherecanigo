@@ -12,13 +12,11 @@ interface SiteHeaderProps {
 export function SiteHeader({ sidebarOpen, onToggleSidebar }: SiteHeaderProps) {
   return (
     <header className="relative shrink-0 px-5 pt-6 pb-4 pr-16 md:px-6 md:pt-8 md:pr-20">
-      <div className="flex items-start gap-3 md:gap-4">
+      <div className="flex items-center gap-3 md:gap-4">
         <img
           src={logo}
-          alt=""
-          width={56}
-          height={36}
-          className="mt-1 h-9 w-auto shrink-0 mix-blend-screen md:mt-1.5 md:h-11"
+          alt="Where Can I Go"
+          className="block h-10 w-auto shrink-0 md:h-12"
         />
         <div className="min-w-0">
           <h1 className="font-serif text-4xl tracking-tight text-ink md:text-5xl">
