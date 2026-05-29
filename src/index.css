@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #f3ede1;
+  --color-paper-raised: #ede5d6;
+  --color-land: #e0d8c7;
+  --color-ink: #211c16;
+  --color-ink-soft: #5c544a;
+  --color-accent: #c8553d;
+  --color-border: rgb(31 27 22 / 0.07);
+
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Budget slider */
+input[type='range'].budget-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: var(--color-border);
+  border-radius: 1px;
+  outline: none;
+}
+
+input[type='range'].budget-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-ink);
+  cursor: grab;
+  border: 2px solid var(--color-paper-raised);
+  box-shadow: 0 1px 3px rgb(31 27 22 / 0.12);
+}
+
+input[type='range'].budget-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-ink);
+  cursor: grab;
+  border: 2px solid var(--color-paper-raised);
+  box-shadow: 0 1px 3px rgb(31 27 22 / 0.12);
+}
+
+input[type='range'].budget-slider:active::-webkit-slider-thumb {
+  cursor: grabbing;
+}
